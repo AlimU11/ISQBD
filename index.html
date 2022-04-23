@@ -1,0 +1,194 @@
+<!---Initialize Home Page--->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class = "title">
+            <h1>Churn Prediction</h1>
+        </div>
+        <div class = "page">
+            <div class = "container">
+                <br>
+                <form action = "{{url_for('predict')}}" method = "post" class = "info">
+                    <label >Gender:</label>
+                    <select name="gender" required="required">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Senior Citizen:</label>
+                    <select name="seniorCitizen" required="required">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Partner:</label>
+                    <select name="partner" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Dependents:</label>
+                    <select name="dependents" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <input type="text" name="Tenure" placeholder="Tenure" required="required"/>
+                    <span style="color:red"> * </span>
+                    <br>
+                    <br>
+
+                    <label >Phone Service:</label>
+                    <select name="phoneService" required="required">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Multiple Lines:</label>
+                    <select name="multipleLines" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No phone service">No phone service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Internet Service:</label>
+                    <select name="internetService" required="required">
+                      <option value="Fiber optic">Fiber optic</option>
+                      <option value="DSL">DSL</option>
+                      <option value="No">No</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Online Security:</label>
+                    <select name="onlineSecurity" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Online Backup:</label>
+                    <select name="onlineBackup" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Device Protection:</label>
+                    <select name="deviceProtection" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Tech Support:</label>
+                    <select name="techSupport" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Streaming TV:</label>
+                    <select name="streamingTv" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Streaming Movies:</label>
+                    <select name="streamingMovies" required="required">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No internet service">No internet service</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Contract:</label>
+                    <select name="contract" required="required">
+                      <option value="Month-to-month">Month-to-month</option>
+                      <option value="Two year">Two year</option>
+                      <option value="One year">One year</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Paper Billing:</label>
+                    <select name="paperBilling" required="required">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <label >Payment Method:</label>
+                    <select name="paymentMethod" required="required">
+                      <option value="Electronic check">Electronic check</option>
+                      <option value="Mailed check">Mailed check</option>
+                      <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                      <option value="Credit card (automatic)">Credit card (automatic)</option>
+                    </select>
+                    <span style="color:red" > * </span>
+                    <br>
+                    <br>
+
+                    <input type="text" name="MonthlyCharges" placeholder="Monthly Charges" required="required"/>
+                    <span style="color:red"> * </span>
+                    <br>
+                    <br>
+
+                    <input type="text" name="TotalCharges" placeholder="Total Charges" required="required"/>
+                    <span style="color:red"> * </span>
+                    <br>
+                    <br>
+
+                    <button type="submit" class="btn">Predict</button>
+                </form>
+                <br>
+                <div class ="pred">
+                    <p class = "result"><b>{{ prediction_text }}</b></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
